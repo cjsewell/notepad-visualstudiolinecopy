@@ -21,7 +21,10 @@ Inspired by: <http://stackoverflow.com/questions/619754/how-to-mimic-visual-stud
 4. Open up the shortcut mapper (Settings > Shortcut Mapper...)
 5. Remove the existing shotcuts
     1. Select the "Scintilla commands" tab
-    2. Remove the Ctrl+X and Ctrl+C shortcuts using the Delete Command on the bottom
+    2. Remove the Ctrl+X and Ctrl+C shortcuts
+        1. Double click the Ctrl+X shortcut 
+        2. Remove the Ctrl+X shortcut using delete command on the bottom left
+        3. Repeat 1 & 2 for the Ctrl+C shortcut
 6. Add the plugin shortcuts (use the modify button with the command selected):
     1. Select the "Plugin commands" tab
     2. Find the CopyAllowLine and CutAllowLine plugin commands (towards the bottom)
