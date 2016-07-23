@@ -42,11 +42,20 @@ void pluginCleanUp()
 {
 }
 
+ShortcutKey copyKey;
+ShortcutKey cutKey;
+
 //
 // Initialization of your plugin commands
 // You should fill your plugins commands here
 void commandMenuInit()
 {
+  copyKey._isCtrl = true;
+  copyKey._key = 0x43; // C
+
+  cutKey._isCtrl = true;
+  cutKey._key = 0x58; // X
+
     //--------------------------------------------//
     //-- STEP 3. CUSTOMIZE YOUR PLUGIN COMMANDS --//
     //--------------------------------------------//
@@ -57,8 +66,8 @@ void commandMenuInit()
     //            ShortcutKey *shortcut,          // optional. Define a shortcut to trigger this command
     //            bool check0nInit                // optional. Make this menu item be checked visually
     //            );
-	setCommand(0, TEXT("CopyAllowLine"), copyAllowLine, NULL, false);
-	setCommand(1, TEXT("CutAllowLine"), cutAllowLine, NULL, false);
+	setCommand(0, TEXT("CopyAllowLine"), copyAllowLine, &copyKey, false);
+	setCommand(1, TEXT("CutAllowLine"), cutAllowLine, &cutKey, false);
 }
 
 //
