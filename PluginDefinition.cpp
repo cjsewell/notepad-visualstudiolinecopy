@@ -30,7 +30,7 @@ NppData nppData;
 
 //
 // Initialize your plugin data here
-// It will be called while plugin loading
+// It will be called while plugin loading   
 void pluginInit(HANDLE hModule)
 {
 }
@@ -66,8 +66,8 @@ void commandMenuInit()
     //            ShortcutKey *shortcut,          // optional. Define a shortcut to trigger this command
     //            bool check0nInit                // optional. Make this menu item be checked visually
     //            );
-	setCommand(0, TEXT("CopyAllowLine"), copyAllowLine, &copyKey, false);
-	setCommand(1, TEXT("CutAllowLine"), cutAllowLine, &cutKey, false);
+    setCommand(0, TEXT("CopyAllowLine"), copyAllowLine, &copyKey, false);
+    setCommand(1, TEXT("CutAllowLine"), cutAllowLine, &cutKey, false);
 }
 
 //
@@ -78,10 +78,11 @@ void commandMenuCleanUp()
 	// Don't forget to deallocate your shortcut here
 }
 
+
 //
 // This function help you to initialize your plugin commands
 //
-bool setCommand(size_t index, TCHAR *cmdName, PFUNCPLUGINCMD pFunc, ShortcutKey *sk, bool check0nInit)
+bool setCommand(size_t index, TCHAR *cmdName, PFUNCPLUGINCMD pFunc, ShortcutKey *sk, bool check0nInit) 
 {
     if (index >= nbFunc)
         return false;
@@ -126,7 +127,7 @@ void copyAllowLine()
 	if (!getScintilla(curScintilla))
 	{
 		::MessageBox(NULL, TEXT("Not Valid"), TEXT("Notepad++ Plugin Template"), MB_OK);
-		return;
+        return;
 	}
 
 	::SendMessage(curScintilla, SCI_COPYALLOWLINE, 0, 0);
